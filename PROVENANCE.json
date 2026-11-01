@@ -1,22 +1,22 @@
 {
   "schemaVersion": 1,
   "package": "swift-ai-azure",
-  "version": "1.0.0",
-  "releaseID": "modular-3",
+  "version": "1.1.0",
+  "releaseID": "weekly-upstream-20261101",
   "source": {
-    "commit": "7fc9b4cd72f8f83b75ba7eee2e38d37127539317",
-    "baseCommit": "7fc9b4cd72f8f83b75ba7eee2e38d37127539317",
+    "commit": "ea057797494ab9bb66df8c6bfd8edc10245b20e7",
+    "baseCommit": "ea057797494ab9bb66df8c6bfd8edc10245b20e7",
     "workingTree": false,
-    "inputsSHA256": "49b802ba4a30454f78c9886ab3114537ef659ab3e6db7775479b7351f6e3f0ab"
+    "inputsSHA256": "b46f3e07b0a583d6fee81035987d74a06fc5c6109cbdf228144d1172d2c3676e"
   },
   "dependencies": [
     {
       "package": "swift-ai-core",
-      "from": "1.0.0"
+      "from": "1.2.0"
     },
     {
       "package": "swift-ai-openai",
-      "from": "1.0.0"
+      "from": "1.1.0"
     },
     {
       "package": "swift-ai-openai-compatible",
@@ -24,30 +24,37 @@
     },
     {
       "package": "swift-ai-deepseek",
-      "from": "1.0.0"
+      "from": "1.1.0"
     }
   ],
   "changes": [
     {
-      "id": "remaining-package-extraction",
-      "notes": "Extract the existing runtime, typed settings and standalone tests from the compatibility aggregate. Preserve the reviewed npm baseline and existing capability/gap boundaries.",
-      "compatibility": "Initial independent Swift package version. Existing SwiftAISDK entry points remain in the development compatibility facade; no npm-version equivalence is implied."
+      "id": "weekly-upstream-20261101",
+      "notes": "Async API keys resolve per OpenAI, MAI and Speech request with appropriate header names, request overrides and Entra exclusivity. MAI WebSocket uses resolved current headers. Expose Azure toolSearch and providerOptions.azure deferLoading with openai fallback in shared Responses requests. Reviewed upstream: @ai-sdk/azure 4.0.110 to 4.0.114. Validation passed: node Scripts/test-packages.mjs (all 52 owning package suites and the compatibility facade); node Scripts/sdk.mjs generate --check; node --test Scripts/tests/*.test.cjs (27 passed); docs-site check and build (100 pages). Live provider calls were not run.",
+      "compatibility": "Minor release for additive native API; existing static settings and call sites remain compatible. Updated direct dependency minimums are recorded in the manifest. Existing documented JS/framework and native product gaps remain; version-delta review does not imply full parity or live-service testing. Explicit custom authentication skips an unused credential supplier, a deliberate native callback-order adaptation."
     }
   ],
   "canonicalDirectory": "Packages/swift-ai-azure",
   "upstream": [
     {
       "name": "@ai-sdk/azure",
-      "reviewedVersion": "4.0.110",
+      "reviewedVersion": "4.0.114",
       "ledgerKind": "provider",
-      "evidence": "`AIProviders.azure`, `AzureOpenAIProvider`, `AzureOpenAITools`, `AlibabaProdiaAzureQuiverTests.swift`",
+      "evidence": "`AIProviders.azure`, `AzureOpenAIProvider`, `AzureOpenAITools`, `AlibabaProdiaAzureQuiverTests.swift`; 2026-11-01 delta: Docs/WeeklyUpstreamAudit20261101.json",
       "reviewStatus": "imported-reviewed-with-gaps",
-      "archiveIntegrity": "sha512-TvLqCeWkCCEjNAf53cJGhbBz49luCWff6QY8FoYv65b9bnE8ZOF7VFSHx87mNRgH1XepA1l1pcz25lNL9iPShQ==",
-      "sourceRef": "npm:@ai-sdk/azure@4.0.110",
-      "testRef": "682e2dd71456f14f9da33a1b983d1998c3a1184c",
-      "testRefRelationship": "inventory-snapshot-not-release-verified",
-      "contractFamilies": [],
-      "contractReview": "not-imported; inspect upstream declarations before extraction"
+      "archiveIntegrity": "sha512-HDHLsQXY0V8vJx169gwqP82zLMxPmsk/4RSYcrnc339mpiDR6PqCvcloAvGqtLhaeqpc43Vb660PcBDINuFgcg==",
+      "sourceRef": "npm:@ai-sdk/azure@4.0.114",
+      "testRef": "9b603d36186b75e58d5479445a96c76f6e2d2700",
+      "testRefRelationship": "matching-release",
+      "contractFamilies": [
+        "EmbeddingModelV4",
+        "ImageModelV4",
+        "LanguageModelV4",
+        "ProviderV4",
+        "SpeechModelV4",
+        "TranscriptionModelV4"
+      ],
+      "contractReview": "2026-11-01: published declarations, source and exact matching-release changed tests reviewed; scoped dispositions and Swift translations are in Docs/WeeklyUpstreamAudit20261101.json. Existing broader product gaps remain; reviewed delta is not full-package parity."
     }
   ],
   "note": "Independent port. Imported test refs and contract review gaps retain their original status; export is not new upstream parity proof.",
@@ -66,7 +73,7 @@
     },
     {
       "canonicalPath": "Packages/swift-ai-azure/Porting/map.json",
-      "sha256": "fb133e0b2514a6e7980164f7804fce964bbe457d42f93c1a7b4b1d3f6f2d8db3"
+      "sha256": "7ec69030577cc72de86ba0feefde8d0de63cdc666fadd467f9de6ec64f53f44a"
     },
     {
       "canonicalPath": "Packages/swift-ai-azure/README.md",
@@ -74,7 +81,7 @@
     },
     {
       "canonicalPath": "Packages/swift-ai-azure/Sources/SwiftAIAzure/AzureAudioModels.swift",
-      "sha256": "c0337583079ae01b3a074f1d68aff266d87a0b1dd95d8c5ab797dfe9ff1897bf"
+      "sha256": "f1bb1919d4f16b349c343b8de545289abfc7043e2b3ae00daf8479653bde2bf6"
     },
     {
       "canonicalPath": "Packages/swift-ai-azure/Sources/SwiftAIAzure/AzureMAIImageModel.swift",
@@ -82,23 +89,23 @@
     },
     {
       "canonicalPath": "Packages/swift-ai-azure/Sources/SwiftAIAzure/AzureMaiStreamingTranscription.swift",
-      "sha256": "f43b427b571360227c1271d3038997f763d08130a64f82955061ff975a8ae89a"
+      "sha256": "0811f4ad350dfba007c3f2318e21fcc2b7b91f3ae2ea6af48a679dc1a3a162bc"
     },
     {
       "canonicalPath": "Packages/swift-ai-azure/Sources/SwiftAIAzure/AzureOpenAIProvider.swift",
-      "sha256": "e95d97c8fc9b0f6a514dd5ace28fbec3d84a501e3e357c5cf00ae93899c13ca0"
+      "sha256": "5cca17e4ca571a9ff83be6fd7fb132a782681eac1e0ec4e6bdb6981b3f7ae2f4"
     },
     {
       "canonicalPath": "Packages/swift-ai-azure/Sources/SwiftAIAzure/AzureOpenAIProviderSettings.swift",
-      "sha256": "b580ea204997da65e6cd55eac1b5c5e34f0b138d2e506f182635a98fa0af332d"
+      "sha256": "aa3ced2bec3b36c903a69df46eeab68055f2c3fc36e0f9e5431160214c0314ea"
     },
     {
       "canonicalPath": "Packages/swift-ai-azure/Sources/SwiftAIAzure/AzureOpenAITools.swift",
-      "sha256": "0facd98a9188eb4d9efea6ac9d5ec563de7d61d9e2934b98a2ddc91a366ca67b"
+      "sha256": "149c60481626bf9c7962cf1f80f1fb3b4395d55ccd172ed09f5efcacce4541dd"
     },
     {
       "canonicalPath": "Packages/swift-ai-azure/Tests/SwiftAIAzureTests/AzureProviderTests.swift",
-      "sha256": "ae8f29ca362d46897426ba12f13921d26fac45d26cf1d6cfef4bc9ed06f95abe"
+      "sha256": "11ea39a5992478f899217a1ceccd666bd943aef71afa29e0f0f43835c6082983"
     },
     {
       "canonicalPath": "Packages/swift-ai-azure/Tests/SwiftAIAzureTests/AzureSocketTestSupport.swift",
@@ -113,12 +120,16 @@
       "sha256": "db2abc8bb88bb2c5d52622ba32a111415f77e583fbaba55c34bfb4dd4a7c5a33"
     },
     {
+      "canonicalPath": "Packages/swift-ai-azure/Tests/SwiftAIAzureTests/Weekly20261101AzureTests.swift",
+      "sha256": "e0296a53110d8342e68eec6aec0d521056b0f4d7e251fb8d13899173889e98c0"
+    },
+    {
       "canonicalPath": "Packages/swift-ai-azure/Tests/SwiftAIAzureTests/WeeklyAzure20261011Tests.swift",
-      "sha256": "c62d6c9d343718d9929055830867530c0fecf2595c7a2223ac48844491f71454"
+      "sha256": "f9ea77aed34158a3f18c42c25270d124fb3345da4b444841299b66097b0e43b7"
     },
     {
       "canonicalPath": "Packages/swift-ai-azure/Tests/SwiftAIAzureTests/WeeklyAzureAudio20261004Tests.swift",
-      "sha256": "9ab3a24f5e0acd1a2efc7169cbedec41aefc2083680bc579030eeb6209369680"
+      "sha256": "dbfce301920e4730ffcc695cad0d64a98384bd4845959bdb22a1d6e40dd4b407"
     }
   ]
 }
