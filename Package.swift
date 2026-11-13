@@ -11,7 +11,7 @@ let package = Package(
     ],
     dependencies: [
         .package(url: "https://github.com/SwiftAISDK/swift-ai-core.git", from: "1.3.0"),
-        .package(url: "https://github.com/SwiftAISDK/swift-ai-openai.git", from: "1.2.0"),
+        .package(url: "https://github.com/SwiftAISDK/swift-ai-openai.git", from: "1.3.0"),
         .package(url: "https://github.com/SwiftAISDK/swift-ai-openai-compatible.git", from: "1.2.0"),
         .package(url: "https://github.com/SwiftAISDK/swift-ai-deepseek.git", from: "1.1.1")
     ],
