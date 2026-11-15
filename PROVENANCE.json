@@ -1,13 +1,13 @@
 {
   "schemaVersion": 1,
   "package": "swift-ai-azure",
-  "version": "1.2.1",
-  "releaseID": "weekly-upstream-20261114",
+  "version": "1.2.2",
+  "releaseID": "weekly-upstream-20261115",
   "source": {
-    "commit": "07fbf86b82d83d9724bd03622e9e87e74395286f",
-    "baseCommit": "07fbf86b82d83d9724bd03622e9e87e74395286f",
+    "commit": "1e543b35e0259a5bda888665dacf2d4a7f1bb0ed",
+    "baseCommit": "1e543b35e0259a5bda888665dacf2d4a7f1bb0ed",
     "workingTree": false,
-    "inputsSHA256": "63e472c0fe891cb7636d225e1c6467e4761dc3721be68081f2afa9f0b656bb29"
+    "inputsSHA256": "5508ffc6347bffaed13fb29409eb856df9a7796d3ebdcb6f623d1e8871b52999"
   },
   "dependencies": [
     {
@@ -29,22 +29,22 @@
   ],
   "changes": [
     {
-      "id": "weekly-upstream-20261114",
-      "notes": "Keep API keys, bearer credentials and provider headers off Azure OpenAI/MAI image, mask and markup URL downloads and redirects. Credential suppliers execute only for authenticated provider requests. Reviewed npm delta: @ai-sdk/azure 4.0.119 to 4.0.125. Validation: `node Scripts/test-packages.mjs` passed all 52 owning suites and 1731 facade tests; tooling 27/27, generation/isolation checks, standalone exports and 106 minimum/latest consumers, documentation check and 101-page build passed. Publication requires green exact-source Swift 6.3.3 CI. Paid/live verification and full-package parity are not claimed.",
-      "compatibility": "Compatible behavior/header correction. Original public selectors are preserved. npm baselines and Swift SemVer are independent; this reviewed delta does not establish full-package or live-service parity. Required direct minimums: swift-ai-openai 1.2.0 to 1.3.0."
+      "id": "weekly-upstream-20261115",
+      "notes": "Align the versioned request identity with the reviewed published package while retaining native open String model IDs and existing request, response, option, error, stream and telemetry behavior. Derived TypeScript model-ID/catalog reorganizations preserve the existing native runtime policies. Reviewed npm delta: @ai-sdk/azure 4.0.125 to 4.0.126. Validation passed: node Scripts/test-packages.mjs (55 owning packages, 2451 owning tests and 1736 compatibility tests), generation checks, 27 tooling tests, isolation/version checks, deterministic exports and minimum-dependency consumers. Documentation check/build passed (104 pages). Publication is gated by exact-source Swift 6.3.3 CI; subsequent public refs and clients are recorded in Docs/ReleaseVerification20261115.json. Paid/live-service checks were not run; this delta does not claim full-package parity.",
+      "compatibility": "Compatible versioned request identity correction; existing public selectors and dependency minimums remain. npm baselines and Swift SemVer are independent."
     }
   ],
   "canonicalDirectory": "Packages/swift-ai-azure",
   "upstream": [
     {
       "name": "@ai-sdk/azure",
-      "reviewedVersion": "4.0.125",
+      "reviewedVersion": "4.0.126",
       "ledgerKind": "provider",
-      "evidence": "`AIProviders.azure`, `AzureOpenAIProvider`, `AzureOpenAITools`, `AlibabaProdiaAzureQuiverTests.swift`; 2026-11-01 delta: Docs/WeeklyUpstreamAudit20261101.json; 2026-11-08 delta: Docs/WeeklyUpstreamAudit20261108.json; 2026-11-14 delta: Docs/WeeklyUpstreamAudit20261114.json",
+      "evidence": "`AIProviders.azure`, `AzureOpenAIProvider`, `AzureOpenAITools`, `AlibabaProdiaAzureQuiverTests.swift`; 2026-11-01 delta: Docs/WeeklyUpstreamAudit20261101.json; 2026-11-08 delta: Docs/WeeklyUpstreamAudit20261108.json; 2026-11-14 delta: Docs/WeeklyUpstreamAudit20261114.json; 2026-11-15 delta: Docs/WeeklyUpstreamAudit20261115.json",
       "reviewStatus": "imported-reviewed-with-gaps",
-      "archiveIntegrity": "sha512-ifCA1n6gecWnC6ZvXTebSKNqQs48F2FEkCVF9mhOWjDP0d5f3KwzjiaVvSIgFZF+Hu3BtfY0A3cKM8lcIH3LlQ==",
-      "sourceRef": "npm:@ai-sdk/azure@4.0.125",
-      "testRef": "8bc7652cdb13fc84722666eb93f45acd0d131eee",
+      "archiveIntegrity": "sha512-/oz8M5iI7JYodcGEsSL5DZpq/H9voER4HMqstdu2xJMaLyOZ5mLJL+VXuNckK96IQ6tl/FCDnm9HyjjEjdyg2A==",
+      "sourceRef": "npm:@ai-sdk/azure@4.0.126",
+      "testRef": "0e8e0543aeda7d4dd4ce6eade0d5b7d5a43644c1",
       "testRefRelationship": "matching-release",
       "contractFamilies": [
         "EmbeddingModelV4",
@@ -54,7 +54,7 @@
         "SpeechModelV4",
         "TranscriptionModelV4"
       ],
-      "contractReview": "2026-11-14: verified published source/declarations and exact matching-release changed tests reviewed separately; native ports, per-file dispositions and retained gaps are recorded in Docs/WeeklyUpstreamAudit20261114.json. Delta review is not full-package or live-service parity."
+      "contractReview": "2026-11-15: published source/declarations and exact matching-release tests reviewed separately. Native delta scenarios, per-file dispositions, unchanged-catalog evidence and explicit remaining gaps are recorded in Docs/WeeklyUpstreamAudit20261115.json. Required checks remain a separate gate; no full-package/live-service parity claim."
     }
   ],
   "note": "Independent port. Imported test refs and contract review gaps retain their original status; export is not new upstream parity proof.",
@@ -73,7 +73,7 @@
     },
     {
       "canonicalPath": "Packages/swift-ai-azure/Porting/map.json",
-      "sha256": "1d2d70eda3aaf70dd71da421fd25faf6a01130bc8c73731d65d532ebcd2826f3"
+      "sha256": "49644b9ae6d3bcd5a766356193c9389490695034fe634dab8ed07b38a2a67bd7"
     },
     {
       "canonicalPath": "Packages/swift-ai-azure/README.md",
@@ -81,7 +81,7 @@
     },
     {
       "canonicalPath": "Packages/swift-ai-azure/Sources/SwiftAIAzure/AzureAudioModels.swift",
-      "sha256": "df0b715a945acad2eb0e3f86d0615d8c944a62352ff400e7a9189dbcb3a9da1c"
+      "sha256": "18de130ae7513d6c9fcb1848313f8519c5792845989c6cb3b8353c195c2e6ccc"
     },
     {
       "canonicalPath": "Packages/swift-ai-azure/Sources/SwiftAIAzure/AzureMAIImageModel.swift",
@@ -93,7 +93,7 @@
     },
     {
       "canonicalPath": "Packages/swift-ai-azure/Sources/SwiftAIAzure/AzureOpenAIProvider.swift",
-      "sha256": "f0cc3e6c8ec7a64009401da9dcc996b64a87583fd8e1ef741b1b8762a1ac24bf"
+      "sha256": "4d98ae55e32251213097f795cf7c3a81889f4389cf5c1462745d09037562a38b"
     },
     {
       "canonicalPath": "Packages/swift-ai-azure/Sources/SwiftAIAzure/AzureOpenAIProviderSettings.swift",
@@ -105,7 +105,7 @@
     },
     {
       "canonicalPath": "Packages/swift-ai-azure/Tests/SwiftAIAzureTests/AzureProviderTests.swift",
-      "sha256": "a2197ec12192dec41e0303ba3026765981768c12659c6ad5c8775e521894db61"
+      "sha256": "0d95483685d1ec70cca0e8e0ca3780508edb690ba45e87d5c81acf50f3866c3c"
     },
     {
       "canonicalPath": "Packages/swift-ai-azure/Tests/SwiftAIAzureTests/AzureSocketTestSupport.swift",
