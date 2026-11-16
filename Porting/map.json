@@ -35,6 +35,7 @@
       "Tests/SwiftAIAzureTests/AzureProviderTests.swift",
       "Tests/SwiftAIAzureTests/AzureSocketTestSupport.swift",
       "Tests/SwiftAIAzureTests/FixtureDownloadTransport.swift",
+      "Tests/SwiftAIAzureTests/ParityAzureTests.swift",
       "Tests/SwiftAIAzureTests/TestSupport.swift",
       "Tests/SwiftAIAzureTests/Weekly20261101AzureTests.swift",
       "Tests/SwiftAIAzureTests/Weekly20261108AzureTests.swift",

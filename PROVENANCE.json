@@ -1,13 +1,13 @@
 {
   "schemaVersion": 1,
   "package": "swift-ai-azure",
-  "version": "1.2.2",
-  "releaseID": "weekly-upstream-20261115",
+  "version": "1.3.0",
+  "releaseID": "upstream-parity-20261116",
   "source": {
-    "commit": "1e543b35e0259a5bda888665dacf2d4a7f1bb0ed",
-    "baseCommit": "1e543b35e0259a5bda888665dacf2d4a7f1bb0ed",
+    "commit": "1c457dea36be42376a6853aecd5c48ffc4942178",
+    "baseCommit": "1c457dea36be42376a6853aecd5c48ffc4942178",
     "workingTree": false,
-    "inputsSHA256": "5508ffc6347bffaed13fb29409eb856df9a7796d3ebdcb6f623d1e8871b52999"
+    "inputsSHA256": "d7b8f52add7828d7e9ed20418fe072e7db03e75483a168bb7f5c34e9d2a04a13"
   },
   "dependencies": [
     {
@@ -29,9 +29,9 @@
   ],
   "changes": [
     {
-      "id": "weekly-upstream-20261115",
-      "notes": "Align the versioned request identity with the reviewed published package while retaining native open String model IDs and existing request, response, option, error, stream and telemetry behavior. Derived TypeScript model-ID/catalog reorganizations preserve the existing native runtime policies. Reviewed npm delta: @ai-sdk/azure 4.0.125 to 4.0.126. Validation passed: node Scripts/test-packages.mjs (55 owning packages, 2451 owning tests and 1736 compatibility tests), generation checks, 27 tooling tests, isolation/version checks, deterministic exports and minimum-dependency consumers. Documentation check/build passed (104 pages). Publication is gated by exact-source Swift 6.3.3 CI; subsequent public refs and clients are recorded in Docs/ReleaseVerification20261115.json. Paid/live-service checks were not run; this delta does not claim full-package parity.",
-      "compatibility": "Compatible versioned request identity correction; existing public selectors and dependency minimums remain. npm baselines and Swift SemVer are independent."
+      "id": "upstream-parity-20261116",
+      "notes": "Azure chat inherits the OpenAI chat fixes (json_schema, service tiers, reasoningSummary warning). The provider can be created with only `speechBaseURL` or `maiBaseURL`; Azure OpenAI calls then fail lazily.",
+      "compatibility": "Source-compatible; changes are additive. Request bodies, results, warnings and errors change to match the reviewed upstream package."
     }
   ],
   "canonicalDirectory": "Packages/swift-ai-azure",
@@ -40,7 +40,7 @@
       "name": "@ai-sdk/azure",
       "reviewedVersion": "4.0.126",
       "ledgerKind": "provider",
-      "evidence": "`AIProviders.azure`, `AzureOpenAIProvider`, `AzureOpenAITools`, `AlibabaProdiaAzureQuiverTests.swift`; 2026-11-01 delta: Docs/WeeklyUpstreamAudit20261101.json; 2026-11-08 delta: Docs/WeeklyUpstreamAudit20261108.json; 2026-11-14 delta: Docs/WeeklyUpstreamAudit20261114.json; 2026-11-15 delta: Docs/WeeklyUpstreamAudit20261115.json",
+      "evidence": "`AIProviders.azure`, `AzureOpenAIProvider`, `AzureOpenAITools`, `AlibabaProdiaAzureQuiverTests.swift`; 2026-11-01 delta: Docs/Archive/WeeklyUpstreamAudit20261101.json; 2026-11-08 delta: Docs/Archive/WeeklyUpstreamAudit20261108.json; 2026-11-14 delta: Docs/Archive/WeeklyUpstreamAudit20261114.json; 2026-11-15 delta: Docs/Archive/WeeklyUpstreamAudit20261115.json",
       "reviewStatus": "imported-reviewed-with-gaps",
       "archiveIntegrity": "sha512-/oz8M5iI7JYodcGEsSL5DZpq/H9voER4HMqstdu2xJMaLyOZ5mLJL+VXuNckK96IQ6tl/FCDnm9HyjjEjdyg2A==",
       "sourceRef": "npm:@ai-sdk/azure@4.0.126",
@@ -54,7 +54,7 @@
         "SpeechModelV4",
         "TranscriptionModelV4"
       ],
-      "contractReview": "2026-11-15: published source/declarations and exact matching-release tests reviewed separately. Native delta scenarios, per-file dispositions, unchanged-catalog evidence and explicit remaining gaps are recorded in Docs/WeeklyUpstreamAudit20261115.json. Required checks remain a separate gate; no full-package/live-service parity claim."
+      "contractReview": "2026-11-15: published source/declarations and exact matching-release tests reviewed separately. Native delta scenarios, per-file dispositions, unchanged-catalog evidence and explicit remaining gaps are recorded in Docs/Archive/WeeklyUpstreamAudit20261115.json. Required checks remain a separate gate; no full-package/live-service parity claim."
     }
   ],
   "note": "Independent port. Imported test refs and contract review gaps retain their original status; export is not new upstream parity proof.",
@@ -73,11 +73,11 @@
     },
     {
       "canonicalPath": "Packages/swift-ai-azure/Porting/map.json",
-      "sha256": "49644b9ae6d3bcd5a766356193c9389490695034fe634dab8ed07b38a2a67bd7"
+      "sha256": "85e2393d9589b6de0e666b2a4093aef16c4cbdda94cf09ec083c93269084c2a1"
     },
     {
       "canonicalPath": "Packages/swift-ai-azure/README.md",
-      "sha256": "5283d3b1c8fca8a0c978ce46baa234ded9cf7d11de5ef25184788d6db43a56e3"
+      "sha256": "d73a4b64ac8bbf52e69c7450141d2d13dc19e2426fc6ff46ad1d32b023c3f3a2"
     },
     {
       "canonicalPath": "Packages/swift-ai-azure/Sources/SwiftAIAzure/AzureAudioModels.swift",
@@ -93,7 +93,7 @@
     },
     {
       "canonicalPath": "Packages/swift-ai-azure/Sources/SwiftAIAzure/AzureOpenAIProvider.swift",
-      "sha256": "4d98ae55e32251213097f795cf7c3a81889f4389cf5c1462745d09037562a38b"
+      "sha256": "33a86a4abf692ef6de396fdadc2bd27fb0281e540209338cec8a80711b6e99bd"
     },
     {
       "canonicalPath": "Packages/swift-ai-azure/Sources/SwiftAIAzure/AzureOpenAIProviderSettings.swift",
@@ -105,7 +105,7 @@
     },
     {
       "canonicalPath": "Packages/swift-ai-azure/Tests/SwiftAIAzureTests/AzureProviderTests.swift",
-      "sha256": "0d95483685d1ec70cca0e8e0ca3780508edb690ba45e87d5c81acf50f3866c3c"
+      "sha256": "670dfe53ddf5409aac0c4cd9845816d9107ed9726b76f2de7c676b47b2064b4d"
     },
     {
       "canonicalPath": "Packages/swift-ai-azure/Tests/SwiftAIAzureTests/AzureSocketTestSupport.swift",
@@ -114,6 +114,10 @@
     {
       "canonicalPath": "Packages/swift-ai-azure/Tests/SwiftAIAzureTests/FixtureDownloadTransport.swift",
       "sha256": "f050646dd2590e9b36bd1159b992f8e70b5d810d8bd5da1917fe002dcf0952ac"
+    },
+    {
+      "canonicalPath": "Packages/swift-ai-azure/Tests/SwiftAIAzureTests/ParityAzureTests.swift",
+      "sha256": "0c6cd8f5f68904a40bebf21e2d1dc43ba3adef60b93667d94aef3dab48a8c466"
     },
     {
       "canonicalPath": "Packages/swift-ai-azure/Tests/SwiftAIAzureTests/TestSupport.swift",
