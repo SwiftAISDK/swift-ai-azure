@@ -1,13 +1,13 @@
 {
   "schemaVersion": 1,
   "package": "swift-ai-azure",
-  "version": "1.3.0",
-  "releaseID": "upstream-parity-20261116",
+  "version": "1.4.0",
+  "releaseID": "weekly-upstream-20261122",
   "source": {
-    "commit": "1c457dea36be42376a6853aecd5c48ffc4942178",
-    "baseCommit": "1c457dea36be42376a6853aecd5c48ffc4942178",
+    "commit": "73e28c7d4106338c3030bc36700c5922aeb2ebd9",
+    "baseCommit": "73e28c7d4106338c3030bc36700c5922aeb2ebd9",
     "workingTree": false,
-    "inputsSHA256": "d7b8f52add7828d7e9ed20418fe072e7db03e75483a168bb7f5c34e9d2a04a13"
+    "inputsSHA256": "5b64cfae284ecf9a081f1c08d5b5dff83915b3c57b62669a3408e51a52961cb5"
   },
   "dependencies": [
     {
@@ -29,22 +29,22 @@
   ],
   "changes": [
     {
-      "id": "upstream-parity-20261116",
-      "notes": "Azure chat inherits the OpenAI chat fixes (json_schema, service tiers, reasoningSummary warning). The provider can be created with only `speechBaseURL` or `maiBaseURL`; Azure OpenAI calls then fail lazily.",
-      "compatibility": "Source-compatible; changes are additive. Request bodies, results, warnings and errors change to match the reviewed upstream package."
+      "id": "weekly-upstream-20261122",
+      "notes": "Add MAI-Image-2.7 and MAI-Image-2.7-Flash routing and transparent or opaque backgrounds in generation and edits. OpenAI image routes accept auto as well. Reviewed npm: @ai-sdk/azure 4.0.126 to 4.0.130. Offline validation passed: node Scripts/test-packages.mjs (56 packages, 3672 owning tests and 1760 compatibility tests), generation, tooling, isolation, and version selection. See Docs/Archive/WeeklyUpstreamAudit20261122.md for retained gaps. Paid provider calls were skipped.",
+      "compatibility": "Additive image options. The MAI route skips auto with a warning."
     }
   ],
   "canonicalDirectory": "Packages/swift-ai-azure",
   "upstream": [
     {
       "name": "@ai-sdk/azure",
-      "reviewedVersion": "4.0.126",
+      "reviewedVersion": "4.0.130",
       "ledgerKind": "provider",
-      "evidence": "`AIProviders.azure`, `AzureOpenAIProvider`, `AzureOpenAITools`, `AlibabaProdiaAzureQuiverTests.swift`; 2026-11-01 delta: Docs/Archive/WeeklyUpstreamAudit20261101.json; 2026-11-08 delta: Docs/Archive/WeeklyUpstreamAudit20261108.json; 2026-11-14 delta: Docs/Archive/WeeklyUpstreamAudit20261114.json; 2026-11-15 delta: Docs/Archive/WeeklyUpstreamAudit20261115.json",
+      "evidence": "`AIProviders.azure`, `AzureOpenAIProvider`, `AzureOpenAITools`, `AlibabaProdiaAzureQuiverTests.swift`; 2026-11-01 delta: Docs/Archive/WeeklyUpstreamAudit20261101.json; 2026-11-08 delta: Docs/Archive/WeeklyUpstreamAudit20261108.json; 2026-11-14 delta: Docs/Archive/WeeklyUpstreamAudit20261114.json; 2026-11-15 delta: Docs/Archive/WeeklyUpstreamAudit20261115.json; 2026-11-22 delta: Docs/Archive/WeeklyUpstreamAudit20261122.json",
       "reviewStatus": "imported-reviewed-with-gaps",
-      "archiveIntegrity": "sha512-/oz8M5iI7JYodcGEsSL5DZpq/H9voER4HMqstdu2xJMaLyOZ5mLJL+VXuNckK96IQ6tl/FCDnm9HyjjEjdyg2A==",
-      "sourceRef": "npm:@ai-sdk/azure@4.0.126",
-      "testRef": "0e8e0543aeda7d4dd4ce6eade0d5b7d5a43644c1",
+      "archiveIntegrity": "sha512-TQg07W68ig6cZMQIN7IDQIeu+oy9WcgJ2rDqrG5SZcCIJRAJtixJEPrx++TgF+qlsInsqbpyVARyxerFKeaBSg==",
+      "sourceRef": "npm:@ai-sdk/azure@4.0.130",
+      "testRef": "3dad57f204c7332178d28c3467c7311875b66a3e",
       "testRefRelationship": "matching-release",
       "contractFamilies": [
         "EmbeddingModelV4",
@@ -54,7 +54,7 @@
         "SpeechModelV4",
         "TranscriptionModelV4"
       ],
-      "contractReview": "2026-11-15: published source/declarations and exact matching-release tests reviewed separately. Native delta scenarios, per-file dispositions, unchanged-catalog evidence and explicit remaining gaps are recorded in Docs/Archive/WeeklyUpstreamAudit20261115.json. Required checks remain a separate gate; no full-package/live-service parity claim."
+      "contractReview": "2026-11-22: reviewed the published source and declarations and the matching-release test diffs. Native evidence and explicitly retained coverage gaps are in Docs/Archive/WeeklyUpstreamAudit20261122.json."
     }
   ],
   "note": "Independent port. Imported test refs and contract review gaps retain their original status; export is not new upstream parity proof.",
@@ -73,7 +73,7 @@
     },
     {
       "canonicalPath": "Packages/swift-ai-azure/Porting/map.json",
-      "sha256": "85e2393d9589b6de0e666b2a4093aef16c4cbdda94cf09ec083c93269084c2a1"
+      "sha256": "5e824654b9eaa9d15ada4352dcc78699cfae633320cef96cdb35be029946e5ac"
     },
     {
       "canonicalPath": "Packages/swift-ai-azure/README.md",
@@ -81,11 +81,11 @@
     },
     {
       "canonicalPath": "Packages/swift-ai-azure/Sources/SwiftAIAzure/AzureAudioModels.swift",
-      "sha256": "18de130ae7513d6c9fcb1848313f8519c5792845989c6cb3b8353c195c2e6ccc"
+      "sha256": "b66e3132af0daa87df2d05fb455627fa8068cebe1650f0fadf4189ca90b751b7"
     },
     {
       "canonicalPath": "Packages/swift-ai-azure/Sources/SwiftAIAzure/AzureMAIImageModel.swift",
-      "sha256": "fb60b80c6080e71cf3a284fc947d58f4a83c2fb1fe90e422c187e6b53b7324ff"
+      "sha256": "d2f34f94073bfa9f0b7d9b5b8bb5bfd61dd60ab9e4ea3a81f452648b7a28a069"
     },
     {
       "canonicalPath": "Packages/swift-ai-azure/Sources/SwiftAIAzure/AzureMaiStreamingTranscription.swift",
@@ -93,7 +93,7 @@
     },
     {
       "canonicalPath": "Packages/swift-ai-azure/Sources/SwiftAIAzure/AzureOpenAIProvider.swift",
-      "sha256": "33a86a4abf692ef6de396fdadc2bd27fb0281e540209338cec8a80711b6e99bd"
+      "sha256": "9bf6782116fb52cb989ade276a541497f539224491e7e81fa0d041919b4a845b"
     },
     {
       "canonicalPath": "Packages/swift-ai-azure/Sources/SwiftAIAzure/AzureOpenAIProviderSettings.swift",
@@ -104,8 +104,12 @@
       "sha256": "656a4794b924a9b5369e6a6298a9c817f1b30c5d47542f681c663ae13b79a1e4"
     },
     {
+      "canonicalPath": "Packages/swift-ai-azure/Tests/SwiftAIAzureTests/AzureMAIBackgroundUpstreamTests.swift",
+      "sha256": "21f64c3e5af74b0bded18e81d63c1d16e8bb620454cbf6e074aad051d5a25e62"
+    },
+    {
       "canonicalPath": "Packages/swift-ai-azure/Tests/SwiftAIAzureTests/AzureProviderTests.swift",
-      "sha256": "670dfe53ddf5409aac0c4cd9845816d9107ed9726b76f2de7c676b47b2064b4d"
+      "sha256": "7e7346501eec879522b46064124e457f6a5138f9dde4b0f1a96911100899d865"
     },
     {
       "canonicalPath": "Packages/swift-ai-azure/Tests/SwiftAIAzureTests/AzureSocketTestSupport.swift",
@@ -137,7 +141,7 @@
     },
     {
       "canonicalPath": "Packages/swift-ai-azure/Tests/SwiftAIAzureTests/WeeklyAzure20261011Tests.swift",
-      "sha256": "f9ea77aed34158a3f18c42c25270d124fb3345da4b444841299b66097b0e43b7"
+      "sha256": "c4a507484e6b64ede0ba8b8706a5c974dcbb4e09404e7061fd416da9cb3bfe96"
     },
     {
       "canonicalPath": "Packages/swift-ai-azure/Tests/SwiftAIAzureTests/WeeklyAzureAudio20261004Tests.swift",
